@@ -1,0 +1,64 @@
+﻿
+{% extends "base.html" %}
+{% load static from staticfiles %}
+    {% block content %}
+		<div id="wrapper">
+			<div id="header">
+				<img src="{% static "images/headersmall.jpg" %}">
+                <div id="headerText">Мискантус гигантский</div>
+			</div>
+            {% for article in article_list %}
+            <a name ="{{ article.0.id }}"></a>
+            {% if article.0.type = 0 %}
+            <div id="information">
+                <div id="title">
+               		<h1>{{ article.0.title }}</h1>
+               		<!--<img src="images/pressdown.png" alt="" />-->
+                </div>  
+                <div id="infoBody">
+                    {{ article.0.body|safe }}
+                </div>
+            </div>
+            {% else %}
+            <div id="foto">
+                <div id="title">
+                    <h1>{{ article.0.title }}</h1>
+               		<!--<img src="images/pressdown.png" alt="" />-->
+                </div>
+                <div class = "container fotoBody">
+                    {% for foto in article.1 %}
+                        <a href="{{ foto.img.url }}" class = "foto_con col-xs-3 col-sm-3 col-lg-2 col-md-2 col-xs-offset-1 col-sm-offset-1 col-lg-offset-1 col-md-offset-1">
+                            <img id="img_1" src="{{ MEDIA_URL }}{{ foto.mini_url }}" alt="Фото 1" />
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <div id="information" >
+                <div id="title">
+               		<h1>Контактная информация</h1>
+               		<!--<img src="images/pressdown.png" alt="" />-->
+                </div>
+                <div id="infoBody">
+                <ul>
+                    {% for contact in contacts_list %}
+                        <li class = "contact"> {{ contact.icon|safe }}  {{ contact.contact_info }} </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+
+		</div>
+		<div id="message">
+			<div id="pnContacts"></div>
+			<form action="">
+			</form>
+		</div>
+        <div id="bg">
+            <div class="imgViewer col-xs-7 col-sm-7 col-lg-7 col-md-7">
+
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+    {% for img in images %}
+
+        {{img.big_img|safe}}
+
+    {% endfor %}
+
+    <div id="imgPanel">
+        <span class = "closebg">Закрыть</span>
+        <span class = "rightb">-</span>
+    </div>
+    <div id="miniimgPanel">
+        {% for page in images.paginator.object_list %}
+            {% if forloop.counter == images.number %}
+                <img src = '{{page.mini_url}}' class="page" id="current_page"  value = '{{forloop.counter}}'>
+            {% else %}
+                <img src = '{{page.mini_url}}' class="page" id="page"  value = '{{forloop.counter}}'>
+            {% endif %}
+        {% endfor %}
+    </div>
