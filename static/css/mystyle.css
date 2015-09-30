@@ -167,9 +167,16 @@ body
  	vertical-align: middle;
  }
 
- #contactsBody li{
- 	list-style-type: none;
- 	vertical-align: middle;
+ #contactsBody td{
+    font-size: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    display: table-cell;
+    vertical-align: middle;
+ }
+
+ #contactsBody {
+    padding-top: 50px;
  }
 
 .img_border{

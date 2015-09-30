@@ -42,11 +42,14 @@
                		<!--<img src="images/pressdown.png" alt="" />-->
                 </div>
                 <div id="contactsBody">
-                <ul>
+                <table>
                     {% for contact in contacts_list %}
-                        <li id = "contact"> {{ contact.icon|safe }}  {{ contact.contact_info }} </li>
+                        <tr>
+                            <td> {{ contact.icon|safe }} </td>
+                            <td> {{ contact.contact_info }} </td>
+                        </tr>
                     {% endfor %}
-                </ul>
+                </table>
                 </div>
             </div>
 

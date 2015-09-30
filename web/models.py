@@ -39,6 +39,8 @@ class ContactTypes(models.Model):
 class Contacts(models.Model):
     contact_type = models.ForeignKey(ContactTypes, verbose_name='Вид контакта')
     contact_info = models.TextField(verbose_name='Значение')
+    clickable = models.BooleanField(verbose_name='Это ссылка')
+
     @property
     def icon(self):
         img_url = self.contact_type.icon.url
