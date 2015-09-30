@@ -118,7 +118,7 @@ body
 	cursor: pointer;
 }
 
-#infoBody, .fotoBody{
+#infoBody, #contactsBody, .fotoBody{
     /*background-image: url("../images/backim.png");*/
     margin: 0px auto;
     padding: 10px;
@@ -128,7 +128,7 @@ body
 
     }
  
-#infoBody h1{
+#infoBody h1, #contactsBody h1{
     font-size: 24px;
     font-size: 24px;
     text-transform: uppercase;
@@ -145,25 +145,31 @@ body
     height: 125px;
 }
 
-#infoBody p, #infoBody li{
+#infoBody p, #infoBody li, #contactsBody p, #contactsBody li{
     font-size: 15px;
     margin: 10px;  
     text-indent: 1.5em; /* ������ ������ ������ */
     text-align: justify; /* ������������ �� ������ */
     line-height: 20px;
     }
-    
- #infoBody li{   
+
+ .contacts li{
+ 	list-style-type: none;
+ 	list-style-image: none;
+ 	vertical-align: middle;
+
+ }
+
+ #infoBody li{
  	list-style-type: disc;
  	list-style-image: url("../images/list.png");
  	list-style-position: inside;
  	vertical-align: middle;
  }
 
- .contact{
+ #contactsBody li{
  	list-style-type: none;
  	vertical-align: middle;
-
  }
 
 .img_border{

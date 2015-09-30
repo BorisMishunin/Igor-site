@@ -41,10 +41,10 @@
                		<h1>Контактная информация</h1>
                		<!--<img src="images/pressdown.png" alt="" />-->
                 </div>
-                <div id="infoBody">
+                <div id="contactsBody">
                 <ul>
                     {% for contact in contacts_list %}
-                        <li class = "contact"> {{ contact.icon|safe }}  {{ contact.contact_info }} </li>
+                        <li id = "contact"> {{ contact.icon|safe }}  {{ contact.contact_info }} </li>
                     {% endfor %}
                 </ul>
                 </div>
