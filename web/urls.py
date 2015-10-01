@@ -6,4 +6,5 @@ from web import views
 urlpatterns = [
     url(r'^$', "web.views.index"),
     url(r'^show_img/', 'web.views.show_img', name='show_img'),
+    url(r'^sent_mail/', 'web.views.sent_mail', name='sent_mail'),
 ]

@@ -46,7 +46,11 @@
                     {% for contact in contacts_list %}
                         <tr>
                             <td> {{ contact.icon|safe }} </td>
-                            <td> {{ contact.contact_info }} </td>
+                            {% if contact.clickable %}
+                              <td> <a href="{{ contact.contact_info }}"> {{ contact.contact_info }} </a> </td>
+                            {% else  %}
+                              <td> {{ contact.contact_info }} </td>
+                            {% endif  %}
                         </tr>
                     {% endfor %}
                 </table>
