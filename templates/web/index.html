@@ -42,18 +42,43 @@
                		<!--<img src="images/pressdown.png" alt="" />-->
                 </div>
                 <div id="contactsBody">
-                <table>
-                    {% for contact in contacts_list %}
-                        <tr>
-                            <td> {{ contact.icon|safe }} </td>
-                            {% if contact.clickable %}
-                              <td> <a href="{{ contact.contact_info }}"> {{ contact.contact_info }} </a> </td>
-                            {% else  %}
-                              <td> {{ contact.contact_info }} </td>
-                            {% endif  %}
-                        </tr>
-                    {% endfor %}
-                </table>
+                    <table>
+                        {% for contact in contacts_list %}
+                            <tr>
+                                <td> {{ contact.icon|safe }} </td>
+                                {% if contact.clickable %}
+                                    <td> <a href="{{ contact.contact_info }}"> {{ contact.contact_info }} </a> </td>
+                                {% else  %}
+                                    <td> {{ contact.contact_info }} </td>
+                                {% endif  %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <form action="/sent_mail/" method="post">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="fieldWrapper">
+                            {{ form.sender_name.errors }}
+                            <label for="sender_name">Имя:</label>
+                            {{ form.sender_name }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ form.email.errors }}
+                            <label for="email">Email:</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ form.letter_title.errors }}
+                            <label for="letter_title">Тема письма:</label>
+                            {{ form.letter_title }}
+                        </div>
+                        <div class="fieldWrapper">
+                            {{ form.letter_text.errors }}
+                            <label for="letter_text">Текст письма</label>
+                            {{ form.letter_text }}
+                        </div>
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
             </div>
 

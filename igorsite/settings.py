@@ -79,6 +79,15 @@ MEDIA_URL = '/media/'
 
 WSGI_APPLICATION = 'igorsite.wsgi.application'
 
+#Mail
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'mbaforever@gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mbaforever@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
