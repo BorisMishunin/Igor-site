@@ -79,14 +79,14 @@ MEDIA_URL = '/media/'
 
 WSGI_APPLICATION = 'igorsite.wsgi.application'
 
-#Mail
+#GMail - unlock https://accounts.google.com/b/0/DisplayUnlockCaptcha
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'mbaforever@gmail.com'
+DEFAULT_FROM_EMAIL = 'mailforresending@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mbaforever@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'mailforresending@gmail.com'
+EMAIL_HOST_PASSWORD = 'Bori$M1234567'
 EMAIL_PORT = 587
 
 # Database
