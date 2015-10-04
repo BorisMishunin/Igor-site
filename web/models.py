@@ -54,8 +54,6 @@ class Contacts(models.Model):
     def __unicode__(self):
         return '%s: %s' %(str(self.contact_type.name), str(self.contact_info))
 
-
-
 class Album(models.Model):
     title = models.CharField("Название альбома", max_length=100)
     #img = models.ImageField("Изображение альбома", upload_to='images', help_text='Размер изображения 200px на 200px')

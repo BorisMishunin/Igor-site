@@ -74,14 +74,14 @@ $(document).ready(function(){
 	
     pnContacts.click(function(e){
 		var x = '0';
-		var y = -parseInt(message.css('width')) +'px';
+		var y = (-parseInt(message.css('height'))+50) +'px';
 		if (flagMessage==1){
-			message.animate({right:'0'}, 1000);
+			message.animate({top:'50'}, 1000);
 			flagMessage = 0;
 		}
 		else 
 		{
-			message.animate({right:y}, 1000);
+			message.animate({top:y}, 1000);
 			flagMessage=1;
 		}			
 	});

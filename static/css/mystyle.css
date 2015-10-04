@@ -7,8 +7,6 @@ body
     font-family: Tahoma, sans-serif; 
 }
 
-
-
 #header{
 	width: 90%;
 	/*outline: 1px solid gray;*/
@@ -186,22 +184,23 @@ body
 #pnContacts{
 	position: absolute;
 	background-color: red;
-	height: 100px;
-	width: 30px;
+	width: 100px;
+	height: 30px;
 	z-index: 999;
-	left: -30px;
-	top: 0px;
+	left: 0px;
+	bottom: -30px;
 	cursor: pointer;
 	display: block;
 }
 
 #message{
-	width: 200px;
-	height: 200px;	
-	background-color: white;
+	width: 300px;
+	height: 50px;
+	background-color:  #EDF6E3;
 	position: fixed;
-	top: 30px;
-	right: -200px;
+	top: 0px;
+	right: 40%;
+    border: 2px solid darkgreen;
 }
 
 .imgViewer{
@@ -272,8 +271,6 @@ body
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.8);
   color: white;
   left: 0px;
   padding: 1px 5px;
@@ -283,4 +280,31 @@ body
     height: 45px;
     width: 70px;
 }
-    
+
+label {
+
+    font-weight: bold;
+    display: block;
+    width: 110px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#contactsBody{
+    color: #284C00;
+}
+
+#contactsBody h2{
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.fieldWrapper{
+    margin-bottom: 10px;
+}
+
+#id_sender_name, #id_email{
+    width: 380px;
+}
