@@ -21,6 +21,8 @@ def index(request, message = ''):
      context_dict['message'] = ''
      if 'mail_message' in request.session:
           context_dict['message'] = request.session["mail_message"]
+          request.session["mail_message"] = ''
+
      return render(request, 'web/index.html', context_dict)
 
 @csrf_exempt
@@ -48,9 +50,15 @@ def sent_mail(request):
              sender_name = form.cleaned_data['sender_name']
              email = form.cleaned_data['email']
              letter_text = form.cleaned_data['letter_text']
-             send_mail('Сообщение от ', letter_text, email, ['mbaforever@gmail.com'], fail_silently=False)
-             message = 'Сообщение отправлено!'
+             try:
+                  send_mail('Сообщение от ', letter_text, email, ['mbaforever@gmail.com'], fail_silently=False)
+                  message = 'Сообщение отправлено!'
+             except:
+                  message = 'Ошибка отправки!!'
+
              request.session["mail_message"] = message
+        else:
+             request.session["mail_message"] = "Ошибка формы отправки!"
      return redirect('/')
 
 

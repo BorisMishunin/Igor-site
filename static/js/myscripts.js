@@ -40,7 +40,14 @@ $(document).ready(function(){
 	var pnContacts = $('#pnContacts');
 	/*message.fadeOut();*/
     var fotos = $('.foto_con');
-	
+	message_text = message.text().trim();
+
+	if (message_text != ''){
+		//alert(message_text);
+		message.css('visibility', 'visible').animate({opacity: 1.0}, 1000);
+	    message.delay(2000).fadeOut(1000);
+	}
+
 	c_img.click(function(){
 		if (flag==1){
 			$('#infoBody').fadeOut(500);
@@ -72,11 +79,11 @@ $(document).ready(function(){
 		message.animate({left:'-100px'}, 1000);
     });*/
 	
-    pnContacts.click(function(e){
+    /*pnContacts.click(function(e){
 		var x = '0';
-		var y = (-parseInt(message.css('height'))+50) +'px';
+		var y = -parseInt(message.css('height')) +'px';
 		if (flagMessage==1){
-			message.animate({top:'50'}, 1000);
+			message.animate({top:'0'}, 1000);
 			flagMessage = 0;
 		}
 		else 
@@ -84,7 +91,7 @@ $(document).ready(function(){
 			message.animate({top:y}, 1000);
 			flagMessage=1;
 		}			
-	});
+	});*/
     
     fotos.click(function(e){
 
